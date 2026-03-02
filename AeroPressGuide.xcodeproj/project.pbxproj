@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06C3723168A25F73FCBEB09B /* BrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC360CD92D21E755DD358D /* BrewView.swift */; };
+		19D43664B797A8DAAD62C377 /* TimeInterval+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A32ECB4846348ABB853BA /* TimeInterval+Format.swift */; };
+		1B8AA828C834FB8F08D3DF6B /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2086D8F43D2C2ED98E2E850 /* RecipeDetailView.swift */; };
+		250D6715CA69F6EAC18F8D3B /* DifficultyBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8B215BB1CE89A05FC92DC6 /* DifficultyBadge.swift */; };
+		3549A5506954C7EB8784234A /* ProgressDotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82B1D33F7ADDE20E6DF437 /* ProgressDotsView.swift */; };
+		43E44426669FE0547EA6B5F8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE8F67EFB60E1056CDA4E4B /* RootView.swift */; };
+		4623C37E751B5BF4835A07CA /* BrewSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A99335A6FA5D363DCE6EF /* BrewSessionStore.swift */; };
+		4878EC9FC0AB05E450B70B22 /* ParameterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F6A12CC3D896CF0E4BF7D8 /* ParameterGridView.swift */; };
+		4B290430582347161B4A68D5 /* BrewStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591FB9BBEFE6E65C63D5AF73 /* BrewStepView.swift */; };
+		5927FD611F7026ECEA74F2A1 /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16335462EAC0E8FD57E580 /* RecipeCardView.swift */; };
+		63F8F741F6368D24E04C825B /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED990BF52EF53CB986088AAB /* Step.swift */; };
+		668AD5096D9A1BA77DD9F258 /* AeroPressGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C2B2BE0C409723F2B1B9D /* AeroPressGuideApp.swift */; };
+		66A549844139D5EF9093FD73 /* BrewCompleteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18A8D41EC6859B9154D8E1 /* BrewCompleteSheet.swift */; };
+		70E15DA24E1BA2593C55AD67 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992BD473C37C43D02E23213 /* TimerView.swift */; };
+		8A10F06D37F0DA46A7090762 /* BrewSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69EA2F7E15F7C655A8A539 /* BrewSession.swift */; };
+		B4BB17A26A2C9FDD458B455B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA4D9FBAFF772E2C8AFFBDE /* Assets.xcassets */; };
+		BDF1FDC79966E44451EF2D42 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EEB614FD1E80F569E10699 /* SeedData.swift */; };
+		C5BE501F4DDDF2307E6AA317 /* RecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B32AA638DF77B599DFC4D28 /* RecipeStore.swift */; };
+		C9FDB4B281276A760C80FBDB /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C15AE62B9D2A667393CAA /* FavoritesView.swift */; };
+		CAAB55B326BEEDA3C752549A /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96327608555083FCC15DC6 /* RecipeListView.swift */; };
+		D983C247B6D5C76D286176A8 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD888C9FB58AA28C7B523656 /* FavoriteButton.swift */; };
+		E6C39ED8D6DABA93A9C1800F /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67304177FFC4AE3C676E0EB8 /* TimerService.swift */; };
+		EBC3A04AA6A84BF524C769DD /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC33F90FD5EAE5AB662C1D /* HistoryView.swift */; };
+		F2ACBD11CFE53AC7DB66344E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9C539A3BDC37D28592676 /* Recipe.swift */; };
+		FB99A699A97BDD813FE12AE7 /* Color+Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9AAA1955E7442E9A1D1398 /* Color+Brand.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B32AA638DF77B599DFC4D28 /* RecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStore.swift; sourceTree = "<group>"; };
+		2C0A99335A6FA5D363DCE6EF /* BrewSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewSessionStore.swift; sourceTree = "<group>"; };
+		2C8B215BB1CE89A05FC92DC6 /* DifficultyBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyBadge.swift; sourceTree = "<group>"; };
+		3C69EA2F7E15F7C655A8A539 /* BrewSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewSession.swift; sourceTree = "<group>"; };
+		4F96327608555083FCC15DC6 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		57D9C539A3BDC37D28592676 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		591FB9BBEFE6E65C63D5AF73 /* BrewStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewStepView.swift; sourceTree = "<group>"; };
+		5C4A32ECB4846348ABB853BA /* TimeInterval+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Format.swift"; sourceTree = "<group>"; };
+		67304177FFC4AE3C676E0EB8 /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		849C2B2BE0C409723F2B1B9D /* AeroPressGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPressGuideApp.swift; sourceTree = "<group>"; };
+		A19C15AE62B9D2A667393CAA /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		AA16335462EAC0E8FD57E580 /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
+		BEA4D9FBAFF772E2C8AFFBDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA18A8D41EC6859B9154D8E1 /* BrewCompleteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewCompleteSheet.swift; sourceTree = "<group>"; };
+		CB9AAA1955E7442E9A1D1398 /* Color+Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Brand.swift"; sourceTree = "<group>"; };
+		CE82B1D33F7ADDE20E6DF437 /* ProgressDotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDotsView.swift; sourceTree = "<group>"; };
+		D8DC360CD92D21E755DD358D /* BrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewView.swift; sourceTree = "<group>"; };
+		DD888C9FB58AA28C7B523656 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		E2EC33F90FD5EAE5AB662C1D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		E2F6A12CC3D896CF0E4BF7D8 /* ParameterGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterGridView.swift; sourceTree = "<group>"; };
+		E93EFB06D46D1C0D109B45C1 /* AeroPressGuide.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AeroPressGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED990BF52EF53CB986088AAB /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		F2086D8F43D2C2ED98E2E850 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		F3EEB614FD1E80F569E10699 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
+		F992BD473C37C43D02E23213 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		FDE8F67EFB60E1056CDA4E4B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		287061FE9B9A182F4FE37251 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				67304177FFC4AE3C676E0EB8 /* TimerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		42FC07674B066BDDB8C6F354 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				E2EC33F90FD5EAE5AB662C1D /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		599146C82CC36DBE312D8709 = {
+			isa = PBXGroup;
+			children = (
+				FCE4B98676DB9ACF6FDFDEDB /* AeroPressGuide */,
+				CC948400045B75A63EC27167 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6175BB8806EB1C76E462F689 /* RecipeList */ = {
+			isa = PBXGroup;
+			children = (
+				AA16335462EAC0E8FD57E580 /* RecipeCardView.swift */,
+				4F96327608555083FCC15DC6 /* RecipeListView.swift */,
+			);
+			path = RecipeList;
+			sourceTree = "<group>";
+		};
+		A702BD8238D2A16A20B17B33 /* Brew */ = {
+			isa = PBXGroup;
+			children = (
+				CA18A8D41EC6859B9154D8E1 /* BrewCompleteSheet.swift */,
+				591FB9BBEFE6E65C63D5AF73 /* BrewStepView.swift */,
+				D8DC360CD92D21E755DD358D /* BrewView.swift */,
+				F992BD473C37C43D02E23213 /* TimerView.swift */,
+			);
+			path = Brew;
+			sourceTree = "<group>";
+		};
+		A789AD7BFE6BE990388C8671 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2C8B215BB1CE89A05FC92DC6 /* DifficultyBadge.swift */,
+				DD888C9FB58AA28C7B523656 /* FavoriteButton.swift */,
+				E2F6A12CC3D896CF0E4BF7D8 /* ParameterGridView.swift */,
+				CE82B1D33F7ADDE20E6DF437 /* ProgressDotsView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B5BD959BE618FACD69A1CC0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDE8F67EFB60E1056CDA4E4B /* RootView.swift */,
+				A702BD8238D2A16A20B17B33 /* Brew */,
+				A789AD7BFE6BE990388C8671 /* Components */,
+				F855D6B7827C805E3F00A88D /* Favorites */,
+				42FC07674B066BDDB8C6F354 /* History */,
+				FC4F8303BDAA113FDAE7011B /* RecipeDetail */,
+				6175BB8806EB1C76E462F689 /* RecipeList */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC948400045B75A63EC27167 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E93EFB06D46D1C0D109B45C1 /* AeroPressGuide.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7D0E3609D1563920373F1BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CB9AAA1955E7442E9A1D1398 /* Color+Brand.swift */,
+				5C4A32ECB4846348ABB853BA /* TimeInterval+Format.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D931FEDAE764A1752770DF09 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				2C0A99335A6FA5D363DCE6EF /* BrewSessionStore.swift */,
+				0B32AA638DF77B599DFC4D28 /* RecipeStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		F4E5DBC5FB15DAD948B4A28C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C69EA2F7E15F7C655A8A539 /* BrewSession.swift */,
+				57D9C539A3BDC37D28592676 /* Recipe.swift */,
+				F3EEB614FD1E80F569E10699 /* SeedData.swift */,
+				ED990BF52EF53CB986088AAB /* Step.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F855D6B7827C805E3F00A88D /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				A19C15AE62B9D2A667393CAA /* FavoritesView.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		FC4F8303BDAA113FDAE7011B /* RecipeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F2086D8F43D2C2ED98E2E850 /* RecipeDetailView.swift */,
+			);
+			path = RecipeDetail;
+			sourceTree = "<group>";
+		};
+		FCE4B98676DB9ACF6FDFDEDB /* AeroPressGuide */ = {
+			isa = PBXGroup;
+			children = (
+				849C2B2BE0C409723F2B1B9D /* AeroPressGuideApp.swift */,
+				BEA4D9FBAFF772E2C8AFFBDE /* Assets.xcassets */,
+				D7D0E3609D1563920373F1BE /* Extensions */,
+				F4E5DBC5FB15DAD948B4A28C /* Models */,
+				287061FE9B9A182F4FE37251 /* Services */,
+				D931FEDAE764A1752770DF09 /* Stores */,
+				B5BD959BE618FACD69A1CC0B /* Views */,
+			);
+			path = AeroPressGuide;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF0CC0FC0202D79FD2F96409 /* AeroPressGuide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61E98AD7A14ED3EA7E2B5F73 /* Build configuration list for PBXNativeTarget "AeroPressGuide" */;
+			buildPhases = (
+				A802C2D614395F40059D0072 /* Sources */,
+				80E81AAA9D37BCCCB60F9A12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AeroPressGuide;
+			packageProductDependencies = (
+			);
+			productName = AeroPressGuide;
+			productReference = E93EFB06D46D1C0D109B45C1 /* AeroPressGuide.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC62FECA301E3C2ECCECC655 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2600;
+			};
+			buildConfigurationList = 04C7B39E304F7B36F4113559 /* Build configuration list for PBXProject "AeroPressGuide" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 599146C82CC36DBE312D8709;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF0CC0FC0202D79FD2F96409 /* AeroPressGuide */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80E81AAA9D37BCCCB60F9A12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4BB17A26A2C9FDD458B455B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A802C2D614395F40059D0072 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				668AD5096D9A1BA77DD9F258 /* AeroPressGuideApp.swift in Sources */,
+				66A549844139D5EF9093FD73 /* BrewCompleteSheet.swift in Sources */,
+				8A10F06D37F0DA46A7090762 /* BrewSession.swift in Sources */,
+				4623C37E751B5BF4835A07CA /* BrewSessionStore.swift in Sources */,
+				4B290430582347161B4A68D5 /* BrewStepView.swift in Sources */,
+				06C3723168A25F73FCBEB09B /* BrewView.swift in Sources */,
+				FB99A699A97BDD813FE12AE7 /* Color+Brand.swift in Sources */,
+				250D6715CA69F6EAC18F8D3B /* DifficultyBadge.swift in Sources */,
+				D983C247B6D5C76D286176A8 /* FavoriteButton.swift in Sources */,
+				C9FDB4B281276A760C80FBDB /* FavoritesView.swift in Sources */,
+				EBC3A04AA6A84BF524C769DD /* HistoryView.swift in Sources */,
+				4878EC9FC0AB05E450B70B22 /* ParameterGridView.swift in Sources */,
+				3549A5506954C7EB8784234A /* ProgressDotsView.swift in Sources */,
+				F2ACBD11CFE53AC7DB66344E /* Recipe.swift in Sources */,
+				5927FD611F7026ECEA74F2A1 /* RecipeCardView.swift in Sources */,
+				1B8AA828C834FB8F08D3DF6B /* RecipeDetailView.swift in Sources */,
+				CAAB55B326BEEDA3C752549A /* RecipeListView.swift in Sources */,
+				C5BE501F4DDDF2307E6AA317 /* RecipeStore.swift in Sources */,
+				43E44426669FE0547EA6B5F8 /* RootView.swift in Sources */,
+				BDF1FDC79966E44451EF2D42 /* SeedData.swift in Sources */,
+				63F8F741F6368D24E04C825B /* Step.swift in Sources */,
+				19D43664B797A8DAAD62C377 /* TimeInterval+Format.swift in Sources */,
+				E6C39ED8D6DABA93A9C1800F /* TimerService.swift in Sources */,
+				70E15DA24E1BA2593C55AD67 /* TimerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0F88370AD6E5FC6F60C0B6E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		7D9835AC949490AA55CD22FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		AA6FA47A168E296EEDD046D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourname.aeropressguide;
+				PRODUCT_NAME = AeroPressGuide;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BD236F024D1D50346AB1063D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourname.aeropressguide;
+				PRODUCT_NAME = AeroPressGuide;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04C7B39E304F7B36F4113559 /* Build configuration list for PBXProject "AeroPressGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D9835AC949490AA55CD22FB /* Debug */,
+				0F88370AD6E5FC6F60C0B6E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		61E98AD7A14ED3EA7E2B5F73 /* Build configuration list for PBXNativeTarget "AeroPressGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD236F024D1D50346AB1063D /* Debug */,
+				AA6FA47A168E296EEDD046D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC62FECA301E3C2ECCECC655 /* Project object */;
+}
