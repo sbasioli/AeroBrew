@@ -3,27 +3,15 @@ import SwiftUI
 struct TimerView: View {
     let timerService: TimerService
     let duration: Int
+    @Environment(\.modelContext) private var modelContext
     @Namespace private var namespace
 
     var body: some View {
         VStack(spacing: 16) {
-            // Time display
             Text(timerService.formattedRemaining)
                 .font(.system(size: 56, weight: .bold, design: .monospaced))
-                .foregroundStyle(timerService.state == .running ? .white : .primary)
-                .padding(.horizontal, 32)
-                .padding(.vertical, 20)
-                .glassEffect(
-                    timerService.state == .running
-                        ? .regular.tint(Color("BrandTimerActive"))
-                        : .regular,
-                    in: RoundedRectangle(cornerRadius: 20)
-                )
-
-            // Progress bar
-            ProgressView(value: timerService.progress)
-                .tint(Color("BrandTimerActive"))
-                .padding(.horizontal)
+                .foregroundStyle(.primary)
+                .padding(.vertical, 12)
 
             // Controls
             GlassEffectContainer {
@@ -72,7 +60,8 @@ struct TimerView: View {
                             .foregroundStyle(.green)
                             .padding()
                             .onAppear {
-                                UINotificationFeedbackGenerator().notificationOccurred(.success)
+                                FeedbackService.shared.notification(.success, context: modelContext)
+                                FeedbackService.shared.successSound(context: modelContext)
                             }
                     }
                 }

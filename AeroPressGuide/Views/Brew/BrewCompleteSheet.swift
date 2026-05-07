@@ -2,7 +2,9 @@ import SwiftUI
 
 struct BrewCompleteSheet: View {
     let recipe: Recipe
+    var onFinish: () -> Void = {}
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
     @Environment(BrewSessionStore.self) private var sessionStore
 
     @State private var rating: Int = 0
@@ -21,13 +23,13 @@ struct BrewCompleteSheet: View {
                 Text("Coffee is Ready!")
                     .font(.title2.weight(.bold))
                 Text("How did you like it?")
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.brandTextSecondary)
 
                 // Star rating
                 HStack(spacing: 8) {
                     ForEach(1...5, id: \.self) { star in
                         Button {
-                            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                            FeedbackService.shared.impact(.light, context: modelContext)
                             rating = star
                         } label: {
                             Image(systemName: star <= rating ? "star.fill" : "star")
@@ -58,7 +60,7 @@ struct BrewCompleteSheet: View {
                     Button("Skip") {
                         save(withRating: nil, notes: nil)
                     }
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.brandTextSecondary)
                 }
             }
             .padding(24)
@@ -73,8 +75,11 @@ struct BrewCompleteSheet: View {
             recipeID: recipe.id,
             recipeName: recipe.name,
             rating: r,
-            notes: n?.isEmpty == false ? n : nil
+            notes: n?.isEmpty == false ? n : nil,
+            coffeeAmount: recipe.coffeeAmount,
+            waterAmount: recipe.waterAmount
         ))
         dismiss()
+        onFinish()
     }
 }

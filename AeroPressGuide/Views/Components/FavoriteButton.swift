@@ -11,7 +11,6 @@ struct FavoriteButton: View {
         } label: {
             Image(systemName: recipe.isFavorite ? "bookmark.fill" : "bookmark")
                 .foregroundStyle(recipe.isFavorite ? Color("BrandAccent") : .secondary)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

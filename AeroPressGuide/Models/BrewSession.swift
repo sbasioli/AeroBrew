@@ -3,12 +3,14 @@ import SwiftData
 
 @Model
 final class BrewSession {
-    var id: String
-    var recipeID: String
-    var recipeName: String
-    var completedAt: Date
+    var id: String = UUID().uuidString
+    var recipeID: String = ""
+    var recipeName: String = ""
+    var completedAt: Date = Date()
     var rating: Int?
     var notes: String?
+    var coffeeAmount: Double?
+    var waterAmount: Double?
 
     init(
         id: String = UUID().uuidString,
@@ -16,7 +18,9 @@ final class BrewSession {
         recipeName: String,
         completedAt: Date = .now,
         rating: Int? = nil,
-        notes: String? = nil
+        notes: String? = nil,
+        coffeeAmount: Double? = nil,
+        waterAmount: Double? = nil
     ) {
         self.id = id
         self.recipeID = recipeID
@@ -24,5 +28,7 @@ final class BrewSession {
         self.completedAt = completedAt
         self.rating = rating
         self.notes = notes
+        self.coffeeAmount = coffeeAmount
+        self.waterAmount = waterAmount
     }
 }

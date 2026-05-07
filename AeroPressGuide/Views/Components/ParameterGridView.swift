@@ -39,7 +39,7 @@ struct ParameterCell: View {
                 .font(.headline)
             Text(label)
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.brandTextSecondary)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)

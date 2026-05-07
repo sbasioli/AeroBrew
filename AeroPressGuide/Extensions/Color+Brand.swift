@@ -9,4 +9,5 @@ extension Color {
     static let brandBorder = Color("BrandBorder")
     static let brandTimerActive = Color("BrandTimerActive")
     static let brandWarning = Color("BrandWarning")
+    static let brandTextSecondary = Color(white: 0.3)
 }

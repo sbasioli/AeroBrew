@@ -15,16 +15,13 @@ struct RecipeCardView: View {
             .clipShape(RoundedRectangle(cornerRadius: 12))
 
             VStack(alignment: .leading, spacing: 4) {
-                HStack {
-                    Text(recipe.name)
-                        .font(.headline)
-                        .lineLimit(1)
-                    Spacer()
-                    FavoriteButton(recipe: recipe)
-                }
+                Text(recipe.name)
+                    .font(.headline)
+                    .lineLimit(1)
+
                 Text(recipe.author)
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.brandTextSecondary)
 
                 HStack(spacing: 12) {
                     Label(recipe.totalTime.formattedDuration, systemImage: "clock")
@@ -32,14 +29,15 @@ struct RecipeCardView: View {
                     Label("\(Int(recipe.waterAmount))ml", systemImage: "drop")
                 }
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.brandTextSecondary)
 
-                HStack {
+                HStack(alignment: .center, spacing: 8) {
                     DifficultyBadge(difficulty: recipe.difficulty)
                     Spacer()
                     Text(recipe.method.displayName)
                         .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.brandTextSecondary)
+                    FavoriteButton(recipe: recipe)
                 }
             }
         }

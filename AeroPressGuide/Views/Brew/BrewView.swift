@@ -2,7 +2,9 @@ import SwiftUI
 
 struct BrewView: View {
     let recipe: Recipe
+    var onFinish: () -> Void = {}
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
     @State private var currentStepIndex: Int = 0
     @State private var showComplete: Bool = false
     @State private var timerService = TimerService()
@@ -15,8 +17,13 @@ struct BrewView: View {
             // Content: swipeable steps
             TabView(selection: $currentStepIndex) {
                 ForEach(steps.indices, id: \.self) { index in
-                    BrewStepView(step: steps[index], timerService: timerService)
-                        .tag(index)
+                    BrewStepView(
+                        step: steps[index],
+                        timerService: timerService,
+                        stepNumber: index + 1,
+                        totalSteps: steps.count
+                    )
+                    .tag(index)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -28,7 +35,7 @@ struct BrewView: View {
                 } else {
                     timerService.configure(duration: 0)
                 }
-                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                FeedbackService.shared.impact(.light, context: modelContext)
             }
 
             // Floating bottom controls (glass)
@@ -37,11 +44,11 @@ struct BrewView: View {
         .overlay(alignment: .topLeading) {
             closeButton
         }
-        .overlay(alignment: .topTrailing) {
-            stepIndicator
-        }
         .sheet(isPresented: $showComplete) {
-            BrewCompleteSheet(recipe: recipe)
+            BrewCompleteSheet(recipe: recipe, onFinish: {
+                dismiss()
+                onFinish()
+            })
         }
         .onAppear {
             if let duration = steps.first?.timerDuration, steps.first?.hasTimer == true {
@@ -72,7 +79,7 @@ struct BrewView: View {
 
                     Button {
                         if isLastStep {
-                            UINotificationFeedbackGenerator().notificationOccurred(.success)
+                            FeedbackService.shared.notification(.success, context: modelContext)
                             showComplete = true
                         } else {
                             withAnimation(.spring(duration: 0.3)) {
@@ -99,7 +106,7 @@ struct BrewView: View {
     // MARK: - Close Button
     private var closeButton: some View {
         Button {
-            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            FeedbackService.shared.impact(.light, context: modelContext)
             dismiss()
         } label: {
             Image(systemName: "xmark")
@@ -111,12 +118,4 @@ struct BrewView: View {
         .padding(.leading, 16)
     }
 
-    // MARK: - Step Indicator
-    private var stepIndicator: some View {
-        Text("\(currentStepIndex + 1)/\(steps.count)")
-            .font(.subheadline.weight(.semibold))
-            .foregroundStyle(.secondary)
-            .padding(.top, 60)
-            .padding(.trailing, 16)
-    }
 }

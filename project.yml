@@ -15,17 +15,35 @@ targets:
     platform: iOS
     sources:
       - AeroPressGuide
+    entitlements:
+      path: AeroPressGuide/AeroPressGuide.entitlements
+      properties:
+        com.apple.developer.icloud-container-identifiers:
+          - iCloud.com.yourname.aeropressguide
+        com.apple.developer.icloud-services:
+          - CloudKit
+        com.apple.developer.ubiquity-container-identifiers:
+          - iCloud.com.yourname.aeropressguide
+        aps-environment: development
+    info:
+      path: AeroPressGuide/Info.plist
+      properties:
+        UIBackgroundModes:
+          - remote-notification
+        UILaunchScreen:
+          UIColorName: ""
+        UISupportedInterfaceOrientations~iphone:
+          - UIInterfaceOrientationPortrait
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
     settings:
       base:
-        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+        TARGETED_DEVICE_FAMILY: "1"
         INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: true
-        INFOPLIST_KEY_UILaunchScreen_Generation: true
-        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
         PRODUCT_BUNDLE_IDENTIFIER: com.yourname.aeropressguide
         PRODUCT_NAME: AeroPressGuide
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: "1"
-        GENERATE_INFOPLIST_FILE: true
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         SWIFT_EMIT_LOC_STRINGS: true

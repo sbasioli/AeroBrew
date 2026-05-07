@@ -37,23 +37,27 @@ enum Difficulty: String, Codable, CaseIterable {
 
 @Model
 final class Recipe {
-    var id: String
-    var name: String
-    var author: String
-    var method: BrewMethod
-    var coffeeAmount: Double
-    var waterAmount: Double
-    var waterTemperature: Int
-    var ratio: String
-    var totalTime: Int
-    var difficulty: Difficulty
-    var isCustom: Bool
+    var id: String = UUID().uuidString
+    var name: String = ""
+    var author: String = ""
+    var method: BrewMethod = BrewMethod.standard
+    var coffeeAmount: Double = 0
+    var waterAmount: Double = 0
+    var waterTemperature: Int = 0
+    var ratio: String = ""
+    var totalTime: Int = 0
+    var difficulty: Difficulty = Difficulty.beginner
+    var isCustom: Bool = false
     var isFavorite: Bool = false
-    var createdAt: Date
-    var updatedAt: Date
+    var createdAt: Date = Date()
+    var updatedAt: Date = Date()
+
+    var sourceYear: Int?
+    var sourceCountry: String?
+    var sourceBadge: String?
 
     @Relationship(deleteRule: .cascade, inverse: \Step.recipe)
-    var steps: [Step] = []
+    var steps: [Step]? = []
 
     init(
         id: String = UUID().uuidString,
@@ -68,7 +72,10 @@ final class Recipe {
         difficulty: Difficulty = .beginner,
         isCustom: Bool = false,
         createdAt: Date = .now,
-        updatedAt: Date = .now
+        updatedAt: Date = .now,
+        sourceYear: Int? = nil,
+        sourceCountry: String? = nil,
+        sourceBadge: String? = nil
     ) {
         self.id = id
         self.name = name
@@ -83,9 +90,12 @@ final class Recipe {
         self.isCustom = isCustom
         self.createdAt = createdAt
         self.updatedAt = updatedAt
+        self.sourceYear = sourceYear
+        self.sourceCountry = sourceCountry
+        self.sourceBadge = sourceBadge
     }
 
     var sortedSteps: [Step] {
-        steps.sorted { $0.order < $1.order }
+        (steps ?? []).sorted { $0.order < $1.order }
     }
 }

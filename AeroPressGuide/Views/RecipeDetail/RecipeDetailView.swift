@@ -7,59 +7,48 @@ struct RecipeDetailView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                heroImage
-                content
+        GeometryReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    heroImage(width: proxy.size.width)
+                    content
+                }
+                .frame(width: proxy.size.width, alignment: .leading)
+                .padding(.bottom, 100)
             }
-            .padding(.bottom, 100)
+            .frame(width: proxy.size.width)
         }
         .ignoresSafeArea(edges: [.top, .bottom])
         .overlay(alignment: .top) {
-            Rectangle()
-                .fill(.thickMaterial)
-                .mask {
-                    LinearGradient(
-                        colors: [.black, .black.opacity(0)],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                }
-                .frame(height: 170)
+            VariableBlurView(maxBlurRadius: 12, direction: .blurredTopClearBottom)
+                .frame(height: 130)
                 .ignoresSafeArea(edges: .top)
                 .allowsHitTesting(false)
         }
         .safeAreaInset(edge: .bottom) {
             bottomBar
                 .background(alignment: .bottom) {
-                    Rectangle()
-                        .fill(.thickMaterial)
-                        .mask {
-                            LinearGradient(
-                                colors: [.black, .black.opacity(0)],
-                                startPoint: .bottom,
-                                endPoint: .top
-                            )
-                        }
-                        .frame(height: 160)
-                        .offset(y: 40)
+                    VariableBlurView(maxBlurRadius: 6, direction: .blurredBottomClearTop)
+                        .frame(height: 100)
+                        .offset(y: 30)
                         .ignoresSafeArea(edges: .bottom)
                 }
         }
         .fullScreenCover(isPresented: $showBrew) {
-            BrewView(recipe: recipe)
+            BrewView(recipe: recipe, onFinish: {
+                dismiss()
+            })
         }
     }
 
     // MARK: - Hero Image
-    private var heroImage: some View {
+    private func heroImage(width: CGFloat) -> some View {
         AsyncImage(url: URL(string: recipe.sortedSteps.first?.imageURL ?? "")) { image in
             image.resizable().scaledToFill()
         } placeholder: {
             Color("BrandBorder")
         }
-        .frame(maxWidth: .infinity)
-        .frame(height: 300)
+        .frame(width: width, height: 300)
         .clipped()
     }
 
@@ -69,9 +58,11 @@ struct RecipeDetailView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(recipe.name)
                     .font(.title2.weight(.bold))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Text(recipe.author)
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.brandTextSecondary)
             }
 
             ParameterGridView(recipe: recipe)
@@ -79,15 +70,17 @@ struct RecipeDetailView: View {
             HStack(spacing: 16) {
                 Label(recipe.totalTime.formattedDuration, systemImage: "clock")
                 DifficultyBadge(difficulty: recipe.difficulty)
+                Spacer(minLength: 0)
                 Text(recipe.method.displayName)
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.brandTextSecondary)
             }
             .font(.subheadline)
 
             stepsPreview
         }
         .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Steps Preview
@@ -108,9 +101,13 @@ struct RecipeDetailView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(step.title)
                             .font(.subheadline.weight(.medium))
+                            .fixedSize(horizontal: false, vertical: true)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         Text(step.stepDescription)
                             .font(.caption)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.brandTextSecondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
             }
@@ -160,3 +157,4 @@ struct RecipeDetailView: View {
         .padding(.bottom, 8)
     }
 }
+

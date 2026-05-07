@@ -9,10 +9,24 @@ struct AeroPressGuideApp: App {
     @State private var sessionStore: BrewSessionStore
 
     init() {
+        let schema = Schema([Recipe.self, Step.self, BrewSession.self, UserProfile.self])
+        let configuration = ModelConfiguration(
+            schema: schema,
+            cloudKitDatabase: .private("iCloud.com.yourname.aeropressguide")
+        )
+
         do {
-            container = try ModelContainer(for: Recipe.self, Step.self, BrewSession.self)
+            container = try ModelContainer(for: schema, configurations: [configuration])
         } catch {
-            fatalError("SwiftData container error: \(error)")
+            // CloudKit container may not be provisioned yet (e.g. in simulator without iCloud sign-in
+            // or before the developer portal config is in place). Fall back to a local-only store
+            // so the app stays usable.
+            do {
+                let localConfig = ModelConfiguration(schema: schema, cloudKitDatabase: .none)
+                container = try ModelContainer(for: schema, configurations: [localConfig])
+            } catch {
+                fatalError("SwiftData container error: \(error)")
+            }
         }
 
         let context = container.mainContext
@@ -32,12 +46,18 @@ struct AeroPressGuideApp: App {
     }
 
     private func seedIfNeeded() {
-        guard recipeStore.allRecipes.isEmpty else { return }
         let context = container.mainContext
-        for recipe in SeedData.allRecipes() {
+        let existingIDs = Set(recipeStore.allRecipes.map { $0.id })
+
+        var didInsert = false
+        for recipe in SeedData.allRecipes() where !existingIDs.contains(recipe.id) {
             context.insert(recipe)
+            didInsert = true
         }
-        try? context.save()
-        recipeStore.fetchRecipes()
+
+        if didInsert {
+            try? context.save()
+            recipeStore.fetchRecipes()
+        }
     }
 }

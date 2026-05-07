@@ -3,12 +3,12 @@ import SwiftData
 
 @Model
 final class Step {
-    var id: String
-    var order: Int
-    var title: String
-    var stepDescription: String
+    var id: String = UUID().uuidString
+    var order: Int = 0
+    var title: String = ""
+    var stepDescription: String = ""
     var imageURL: String?
-    var hasTimer: Bool
+    var hasTimer: Bool = false
     var timerDuration: Int?
 
     var recipe: Recipe?
