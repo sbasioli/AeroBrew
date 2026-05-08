@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -105,7 +105,7 @@
 		E2EC33F90FD5EAE5AB662C1D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		E2F6A12CC3D896CF0E4BF7D8 /* ParameterGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterGridView.swift; sourceTree = "<group>"; };
 		E52705EDA73F74785D7E9F90 /* HistorySortMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySortMenu.swift; sourceTree = "<group>"; };
-		E93EFB06D46D1C0D109B45C1 /* AeroPressGuide.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AeroPressGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93EFB06D46D1C0D109B45C1 /* AeroPressGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AeroPressGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED990BF52EF53CB986088AAB /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		F2086D8F43D2C2ED98E2E850 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		F39E163AC02234367B1F0F11 /* EditProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileSheet.swift; sourceTree = "<group>"; };
@@ -343,7 +343,6 @@
 			);
 			mainGroup = 599146C82CC36DBE312D8709;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -552,6 +551,7 @@
 				CODE_SIGN_ENTITLEMENTS = AeroPressGuide/AeroPressGuide.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4D38LAG45;
 				INFOPLIST_FILE = AeroPressGuide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -575,6 +575,7 @@
 				CODE_SIGN_ENTITLEMENTS = AeroPressGuide/AeroPressGuide.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4D38LAG45;
 				INFOPLIST_FILE = AeroPressGuide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

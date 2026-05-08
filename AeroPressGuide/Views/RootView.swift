@@ -30,22 +30,20 @@ struct RootView: View {
 
     @ViewBuilder
     private var tabContent: some View {
-        ZStack {
-            switch selectedTab {
-            case .recipes:
-                NavigationStack { RecipeListView() }
-                    .transition(.opacity)
-            case .history:
-                NavigationStack { HistoryView() }
-                    .transition(.opacity)
-            case .education:
-                NavigationStack { EducationView() }
-                    .transition(.opacity)
-            case .profile:
-                NavigationStack { ProfileView() }
-                    .transition(.opacity)
-            }
+        TabView(selection: $selectedTab) {
+            NavigationStack { RecipeListView() }
+                .tag(Tab.recipes)
+
+            NavigationStack { EducationView() }
+                .tag(Tab.education)
+
+            NavigationStack { HistoryView() }
+                .tag(Tab.history)
+
+            NavigationStack { ProfileView() }
+                .tag(Tab.profile)
         }
+        .tabViewStyle(.page(indexDisplayMode: .never))
         .animation(.easeInOut(duration: 0.25), value: selectedTab)
     }
 
@@ -57,12 +55,13 @@ struct RootView: View {
         }
         .padding(4)
         .glassEffect(.regular.interactive(), in: Capsule())
+        .animation(.spring(response: 0.4, dampingFraction: 0.78), value: selectedTab)
     }
 
     private func tabButton(_ tab: Tab) -> some View {
         Button {
             FeedbackService.shared.impact(.light, context: modelContext)
-            withAnimation(.easeInOut(duration: 0.25)) {
+            withAnimation(.spring(response: 0.4, dampingFraction: 0.78)) {
                 selectedTab = tab
             }
         } label: {
