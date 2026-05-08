@@ -3,13 +3,20 @@ import SwiftUI
 struct ConsumedCard: View {
     let liters: Double
     let beans: Int
+    let sinceLabel: String
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text("TOTAL BREWED")
-                .font(.system(size: 11, weight: .medium))
-                .tracking(0.5)
-                .foregroundStyle(Color(hex: 0x854F0B))
+        VStack(alignment: .leading, spacing: 32) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("TOTAL BREWED")
+                    .font(.system(size: 11, weight: .medium))
+                    .tracking(0.5)
+                    .foregroundStyle(Color(hex: 0x854F0B))
+                Spacer()
+                Text(sinceLabel)
+                    .font(.system(size: 11))
+                    .foregroundStyle(Color.brandTextSecondary)
+            }
 
             HStack(spacing: 12) {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {

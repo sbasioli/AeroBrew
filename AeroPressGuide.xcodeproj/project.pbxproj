@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,9 +28,11 @@
 		668AD5096D9A1BA77DD9F258 /* AeroPressGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C2B2BE0C409723F2B1B9D /* AeroPressGuideApp.swift */; };
 		66A549844139D5EF9093FD73 /* BrewCompleteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA18A8D41EC6859B9154D8E1 /* BrewCompleteSheet.swift */; };
 		70E15DA24E1BA2593C55AD67 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F992BD473C37C43D02E23213 /* TimerView.swift */; };
+		7A037CEB5890E318221FC40A /* RecipeTemplatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A176D74C7ED1C162C920DCDA /* RecipeTemplatePicker.swift */; };
 		7F6596DFD164BD30A7FAD671 /* EducationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD946EB06DA4A8492A6F4C /* EducationContent.swift */; };
 		8A10F06D37F0DA46A7090762 /* BrewSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69EA2F7E15F7C655A8A539 /* BrewSession.swift */; };
 		93988D7E9D0A4299DBB0C40E /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A9FB92993FD859969C26F /* SettingsSection.swift */; };
+		9630940607D35470E471B2FC /* RecipeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F9E9D61834D02FABAFD83 /* RecipeEditView.swift */; };
 		B1EB78EACD2778DAC6EB4E66 /* GlossaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27049A85AED11B28F84E7B2 /* GlossaryDetailView.swift */; };
 		B4BB17A26A2C9FDD458B455B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA4D9FBAFF772E2C8AFFBDE /* Assets.xcassets */; };
 		B84BBE7862E12A700F7A8C26 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59941D7DC9F6D6F9429546A4 /* FeedbackService.swift */; };
@@ -48,6 +50,7 @@
 		E6C39ED8D6DABA93A9C1800F /* TimerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67304177FFC4AE3C676E0EB8 /* TimerService.swift */; };
 		EBC3A04AA6A84BF524C769DD /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC33F90FD5EAE5AB662C1D /* HistoryView.swift */; };
 		EC5C3A9872ACDAB8C901EE03 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CE57AACEB6094F98BCD3C /* Color+Hex.swift */; };
+		EE8407C4754595D902EE06FC /* RecipeDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5DCC0FFEC32EFD3788D459 /* RecipeDraft.swift */; };
 		F00FF89CACDBB919FE26B770 /* ConsumedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FDCCF706EC69F6E07A21C9 /* ConsumedCard.swift */; };
 		F2ACBD11CFE53AC7DB66344E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9C539A3BDC37D28592676 /* Recipe.swift */; };
 		F78ACFA1984960FC18EDE94E /* AboutSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11C45060A40EDF51F20C70 /* AboutSheet.swift */; };
@@ -76,12 +79,15 @@
 		67304177FFC4AE3C676E0EB8 /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
 		6CDD946EB06DA4A8492A6F4C /* EducationContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationContent.swift; sourceTree = "<group>"; };
 		6CE068663AC36CD7D47087C5 /* RecipeSortMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSortMenu.swift; sourceTree = "<group>"; };
+		6E5DCC0FFEC32EFD3788D459 /* RecipeDraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDraft.swift; sourceTree = "<group>"; };
 		778C1BD5653941AE065FF825 /* BrewingTimeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingTimeCard.swift; sourceTree = "<group>"; };
 		7E8CE57AACEB6094F98BCD3C /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		849C2B2BE0C409723F2B1B9D /* AeroPressGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPressGuideApp.swift; sourceTree = "<group>"; };
 		878F2DA18F660BC118552FFA /* MonthHeatmapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeatmapPage.swift; sourceTree = "<group>"; };
+		8A0F9E9D61834D02FABAFD83 /* RecipeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditView.swift; sourceTree = "<group>"; };
 		8E4EA082934387647DB5440A /* ActivityHeatmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeatmap.swift; sourceTree = "<group>"; };
 		953A34911B3BF286351E9CC0 /* VariableBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableBlurView.swift; sourceTree = "<group>"; };
+		A176D74C7ED1C162C920DCDA /* RecipeTemplatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTemplatePicker.swift; sourceTree = "<group>"; };
 		A19C15AE62B9D2A667393CAA /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		A442829D301B304CA4DDF58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AA16335462EAC0E8FD57E580 /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
@@ -99,7 +105,7 @@
 		E2EC33F90FD5EAE5AB662C1D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		E2F6A12CC3D896CF0E4BF7D8 /* ParameterGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterGridView.swift; sourceTree = "<group>"; };
 		E52705EDA73F74785D7E9F90 /* HistorySortMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySortMenu.swift; sourceTree = "<group>"; };
-		E93EFB06D46D1C0D109B45C1 /* AeroPressGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AeroPressGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93EFB06D46D1C0D109B45C1 /* AeroPressGuide.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = AeroPressGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED990BF52EF53CB986088AAB /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		F2086D8F43D2C2ED98E2E850 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		F39E163AC02234367B1F0F11 /* EditProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileSheet.swift; sourceTree = "<group>"; };
@@ -110,6 +116,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		26DFF75A6C3B2AA789F07BA6 /* RecipeEdit */ = {
+			isa = PBXGroup;
+			children = (
+				8A0F9E9D61834D02FABAFD83 /* RecipeEditView.swift */,
+				A176D74C7ED1C162C920DCDA /* RecipeTemplatePicker.swift */,
+			);
+			path = RecipeEdit;
+			sourceTree = "<group>";
+		};
 		287061FE9B9A182F4FE37251 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +196,7 @@
 				42FC07674B066BDDB8C6F354 /* History */,
 				D4631FB07F2865B510014EB8 /* Profile */,
 				FC4F8303BDAA113FDAE7011B /* RecipeDetail */,
+				26DFF75A6C3B2AA789F07BA6 /* RecipeEdit */,
 				6175BB8806EB1C76E462F689 /* RecipeList */,
 			);
 			path = Views;
@@ -247,6 +263,7 @@
 				3C69EA2F7E15F7C655A8A539 /* BrewSession.swift */,
 				6CDD946EB06DA4A8492A6F4C /* EducationContent.swift */,
 				57D9C539A3BDC37D28592676 /* Recipe.swift */,
+				6E5DCC0FFEC32EFD3788D459 /* RecipeDraft.swift */,
 				F3EEB614FD1E80F569E10699 /* SeedData.swift */,
 				ED990BF52EF53CB986088AAB /* Step.swift */,
 				09EF06F2AFCEEEC27C4096A5 /* UserProfile.swift */,
@@ -326,6 +343,7 @@
 			);
 			mainGroup = 599146C82CC36DBE312D8709;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -383,9 +401,12 @@
 				F2ACBD11CFE53AC7DB66344E /* Recipe.swift in Sources */,
 				5927FD611F7026ECEA74F2A1 /* RecipeCardView.swift in Sources */,
 				1B8AA828C834FB8F08D3DF6B /* RecipeDetailView.swift in Sources */,
+				EE8407C4754595D902EE06FC /* RecipeDraft.swift in Sources */,
+				9630940607D35470E471B2FC /* RecipeEditView.swift in Sources */,
 				CAAB55B326BEEDA3C752549A /* RecipeListView.swift in Sources */,
 				C27DF8ABFAD82464F7C3C1FF /* RecipeSortMenu.swift in Sources */,
 				C5BE501F4DDDF2307E6AA317 /* RecipeStore.swift in Sources */,
+				7A037CEB5890E318221FC40A /* RecipeTemplatePicker.swift in Sources */,
 				43E44426669FE0547EA6B5F8 /* RootView.swift in Sources */,
 				BDF1FDC79966E44451EF2D42 /* SeedData.swift in Sources */,
 				93988D7E9D0A4299DBB0C40E /* SettingsSection.swift in Sources */,
@@ -531,7 +552,6 @@
 				CODE_SIGN_ENTITLEMENTS = AeroPressGuide/AeroPressGuide.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P4D38LAG45;
 				INFOPLIST_FILE = AeroPressGuide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -555,7 +575,6 @@
 				CODE_SIGN_ENTITLEMENTS = AeroPressGuide/AeroPressGuide.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P4D38LAG45;
 				INFOPLIST_FILE = AeroPressGuide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

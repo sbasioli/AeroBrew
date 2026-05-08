@@ -30,6 +30,10 @@ struct RecipeListView: View {
     @State private var sortOption: RecipeSortOption? = nil
     @State private var favoritesOnly: Bool = false
 
+    @State private var showAddEditor: Bool = false
+    @State private var recipeToEdit: Recipe? = nil
+    @State private var deleteCandidate: Recipe? = nil
+
     private var filteredRecipes: [Recipe] {
         let filtered = store.allRecipes.filter { recipe in
             (methodFilter == nil || recipe.method == methodFilter) &&
@@ -69,6 +73,20 @@ struct RecipeListView: View {
                         RecipeCardView(recipe: recipe)
                     }
                     .buttonStyle(.plain)
+                    .contextMenu {
+                        if recipe.isCustom {
+                            Button {
+                                recipeToEdit = recipe
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                            Button(role: .destructive) {
+                                deleteCandidate = recipe
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
+                    }
                 }
 
                 if filteredRecipes.isEmpty {
@@ -86,13 +104,48 @@ struct RecipeListView: View {
                 methodFilter: $methodFilter,
                 difficultyFilter: $difficultyFilter,
                 sortOption: $sortOption,
-                favoritesOnly: $favoritesOnly
+                favoritesOnly: $favoritesOnly,
+                onAdd: { showAddEditor = true }
             )
         }
         .toolbar(.hidden, for: .navigationBar)
         .toolbarBackground(.hidden, for: .navigationBar)
         .fullScreenCover(item: $selectedRecipe) { recipe in
             RecipeDetailView(recipe: recipe)
+        }
+        .sheet(isPresented: $showAddEditor) {
+            RecipeEditView(
+                mode: .createNew,
+                initialDraft: RecipeDraft(),
+                templates: store.allRecipes
+            ) { recipe in
+                store.addCustomRecipe(recipe)
+            }
+        }
+        .sheet(item: $recipeToEdit) { recipe in
+            RecipeEditView(
+                mode: .editExisting(recipe),
+                initialDraft: RecipeDraft.from(recipe)
+            ) { _ in
+                store.fetchRecipes()
+            }
+        }
+        .alert(
+            "Delete \(deleteCandidate?.name ?? "Recipe")?",
+            isPresented: Binding(
+                get: { deleteCandidate != nil },
+                set: { if !$0 { deleteCandidate = nil } }
+            )
+        ) {
+            Button("Cancel", role: .cancel) { deleteCandidate = nil }
+            Button("Delete", role: .destructive) {
+                if let recipe = deleteCandidate {
+                    store.deleteRecipe(recipe)
+                }
+                deleteCandidate = nil
+            }
+        } message: {
+            Text("This recipe will be permanently deleted.")
         }
     }
 
@@ -115,9 +168,13 @@ private struct FilterBar: View {
     @Binding var difficultyFilter: Difficulty?
     @Binding var sortOption: RecipeSortOption?
     @Binding var favoritesOnly: Bool
+    var onAdd: () -> Void
 
     var body: some View {
         HStack(spacing: 8) {
+            RecipeSortMenu(sortOption: $sortOption)
+                .padding(.leading, 16)
+
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
                     FilterChip(
@@ -154,7 +211,6 @@ private struct FilterBar: View {
                         .foregroundStyle(Color.brandTextSecondary)
                     }
                 }
-                .padding(.leading, 16)
                 .padding(.trailing, 8)
                 .padding(.vertical, 4)
             }
@@ -162,7 +218,7 @@ private struct FilterBar: View {
 
             FavoritesFilterToggle(isOn: $favoritesOnly)
 
-            RecipeSortMenu(sortOption: $sortOption)
+            AddRecipeButton(action: onAdd)
                 .padding(.trailing, 16)
         }
         .frame(height: 44)

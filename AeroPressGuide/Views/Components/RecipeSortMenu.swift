@@ -64,6 +64,24 @@ struct FavoritesFilterToggle: View {
     }
 }
 
+struct AddRecipeButton: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button {
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            action()
+        } label: {
+            Image(systemName: "plus")
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(.primary)
+                .frame(width: 36, height: 36)
+                .contentShape(Circle())
+        }
+        .glassEffect(.regular.interactive(), in: Circle())
+    }
+}
+
 struct ProgressiveBlurHeaderBackground: View {
     var maxBlurRadius: CGFloat = 10
     var height: CGFloat = 130

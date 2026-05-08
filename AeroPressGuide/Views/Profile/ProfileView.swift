@@ -6,8 +6,6 @@ struct ProfileView: View {
     @Query(sort: \BrewSession.completedAt, order: .reverse) private var sessions: [BrewSession]
     @Query private var allRecipes: [Recipe]
 
-    @State private var showEditProfile = false
-
     private let stats = StatisticsService()
 
     private var profile: UserProfile {
@@ -17,15 +15,10 @@ struct ProfileView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 18) {
-                AvatarHeader(
-                    profile: profile,
-                    totalBrews: stats.totalBrews(sessions),
-                    onEdit: { showEditProfile = true }
-                )
-
                 ConsumedCard(
                     liters: stats.totalLiters(sessions, recipes: allRecipes),
-                    beans: stats.totalBeansGrams(sessions, recipes: allRecipes)
+                    beans: stats.totalBeansGrams(sessions, recipes: allRecipes),
+                    sinceLabel: brewsSinceLabel
                 )
 
                 BrewingTimeCard(
@@ -47,8 +40,15 @@ struct ProfileView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .toolbarBackground(.hidden, for: .navigationBar)
-        .sheet(isPresented: $showEditProfile) {
-            EditProfileSheet(profile: profile)
-        }
+    }
+
+    private var brewsSinceLabel: String {
+        let total = stats.totalBrews(sessions)
+        let formatter = DateFormatter()
+        formatter.locale = Locale.current
+        formatter.dateFormat = "LLLL yyyy"
+        let monthString = formatter.string(from: profile.createdAt)
+        let plural = total == 1 ? "brew" : "brews"
+        return "\(total) \(plural) since \(monthString)"
     }
 }
